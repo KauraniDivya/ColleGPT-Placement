@@ -12,11 +12,11 @@ import {
   Award,
   ArrowRight,
   Users,
-  Zap,
+  Briefcase,
   Brain,
   Code,
-  Smartphone,
-  Database,
+  Building2,
+  DollarSign,
 } from "lucide-react";
 
 const PlannerSection = forwardRef((props, ref) => {
@@ -58,98 +58,100 @@ const PlannerSection = forwardRef((props, ref) => {
     };
   }, [ref]);
 
-  // Planner tabs
+  // Planner tabs for placement preparation
   const plannerTabs = [
-    { id: "calendar", name: "Calendar", fullName: "Project Calendar", icon: Calendar },
+    { id: "calendar", name: "Schedule", fullName: "Prep Schedule", icon: Calendar },
     { id: "progress", name: "Skills", fullName: "Skills Tracker", icon: TrendingUp },
-    { id: "goals", name: "Goals", fullName: "Hackathon Goals", icon: Target },
+    { id: "goals", name: "Goals", fullName: "Career Goals", icon: Target },
     { id: "analytics", name: "Analytics", fullName: "Performance", icon: BarChart3 },
   ];
 
-  // Project schedule data for hackathons
-  const projectSchedule = [
+  // Placement preparation schedule
+  const prepSchedule = [
     {
-      time: "Day 1: 09:00 - 12:00",
-      shortTime: "D1: 09-12",
-      activity: "Ideation & Planning",
-      task: "Brainstorm ideas and create project roadmap",
+      time: "Week 1-4: Foundation",
+      shortTime: "W1-4",
+      activity: "DSA Fundamentals",
+      task: "Arrays, Strings, Linked Lists, Basic Recursion",
       status: "completed",
       priority: "high"
     },
     {
-      time: "Day 1: 13:00 - 18:00",
-      shortTime: "D1: 13-18",
-      activity: "Setup & Architecture",
-      task: "Setup development environment and design system architecture",
+      time: "Week 5-8: Intermediate",
+      shortTime: "W5-8",
+      activity: "Advanced DSA",
+      task: "Trees, Graphs, Dynamic Programming, Advanced Algorithms",
       status: "in-progress",
       priority: "high"
     },
     {
-      time: "Day 2: 09:00 - 15:00",
-      shortTime: "D2: 09-15",
-      activity: "Core Development",
-      task: "Implement main features and functionality",
+      time: "Week 9-10: System Design",
+      shortTime: "W9-10",
+      activity: "System Design Basics",
+      task: "Scalability, Databases, Load Balancing, Microservices",
       status: "upcoming",
       priority: "high"
     },
     {
-      time: "Day 2: 16:00 - 20:00",
-      shortTime: "D2: 16-20",
-      activity: "Testing & Polish",
-      task: "Bug fixes, testing, and UI improvements",
+      time: "Week 11-12: Mock Interviews",
+      shortTime: "W11-12",
+      activity: "Interview Practice",
+      task: "Coding interviews, Behavioral rounds, System design practice",
       status: "upcoming",
       priority: "medium"
     },
   ];
 
-  // Progress data for hackathon skills
+  // Skills progress for placement preparation
   const skillProgress = [
-    { skill: "Frontend Development", shortSkill: "Frontend", completed: 85, total: 100, color: "bg-green-500" },
-    { skill: "Backend APIs", shortSkill: "Backend", completed: 72, total: 100, color: "bg-blue-500" },
-    { skill: "Database Design", shortSkill: "Database", completed: 68, total: 100, color: "bg-purple-500" },
-    { skill: "UI/UX Design", shortSkill: "UI/UX", completed: 54, total: 100, color: "bg-orange-500" },
-    { skill: "DevOps & Deployment", shortSkill: "DevOps", completed: 61, total: 100, color: "bg-pink-500" },
-    { skill: "AI/ML Integration", shortSkill: "AI/ML", completed: 45, total: 100, color: "bg-indigo-500" },
+    { skill: "Data Structures & Algorithms", shortSkill: "DSA", completed: 75, total: 100, color: "bg-orange-500" },
+    { skill: "System Design", shortSkill: "System Design", completed: 45, total: 100, color: "bg-red-500" },
+    { skill: "Programming Languages", shortSkill: "Programming", completed: 88, total: 100, color: "bg-amber-500" },
+    { skill: "Database Management", shortSkill: "Database", completed: 62, total: 100, color: "bg-orange-600" },
+    { skill: "Software Engineering", shortSkill: "SWE", completed: 71, total: 100, color: "bg-red-400" },
+    { skill: "Communication Skills", shortSkill: "Communication", completed: 58, total: 100, color: "bg-yellow-500" },
   ];
 
-  // Weekly development stats
+  // Weekly preparation hours
   const weeklyStats = [
-    { day: "Mon", shortDay: "M", hours: 6, target: 8 },
-    { day: "Tue", shortDay: "T", hours: 7, target: 8 },
-    { day: "Wed", shortDay: "W", hours: 9, target: 8 },
-    { day: "Thu", shortDay: "T", hours: 8, target: 8 },
-    { day: "Fri", shortDay: "F", hours: 10, target: 8 },
-    { day: "Sat", shortDay: "S", hours: 12, target: 10 },
-    { day: "Sun", shortDay: "S", hours: 8, target: 6 },
+    { day: "Mon", shortDay: "M", hours: 4, target: 6 },
+    { day: "Tue", shortDay: "T", hours: 5, target: 6 },
+    { day: "Wed", shortDay: "W", hours: 6, target: 6 },
+    { day: "Thu", shortDay: "T", hours: 7, target: 6 },
+    { day: "Fri", shortDay: "F", hours: 8, target: 6 },
+    { day: "Sat", shortDay: "S", hours: 10, target: 8 },
+    { day: "Sun", shortDay: "S", hours: 6, target: 4 },
   ];
 
-  // Hackathon goals
-  const hackathonGoals = [
+  // Career goals for placement
+  const careerGoals = [
     {
-      title: "Complete AI Project",
-      deadline: "July 20, 2025",
-      shortDeadline: "Jul 20",
-      progress: 65,
+      title: "Get SDE-1 Role at FAANG",
+      shortTitle: "FAANG SDE-1",
+      deadline: "August 2025",
+      shortDeadline: "Aug 2025",
+      progress: 68,
       priority: "high",
       status: "on-track"
     },
     {
-      title: "Learn React Native",
-      deadline: "August 1, 2025",
-      shortDeadline: "Aug 1",
-      progress: 40,
-      total: 100,
+      title: "Complete 300 LeetCode Problems",
+      shortTitle: "300 LC Problems",
+      deadline: "June 2025",
+      shortDeadline: "Jun 2025",
+      progress: 187,
+      total: 300,
+      priority: "high",
+      status: "on-track"
+    },
+    {
+      title: "System Design Mastery",
+      shortTitle: "System Design",
+      deadline: "July 2025",
+      shortDeadline: "Jul 2025",
+      progress: 3,
+      total: 10,
       priority: "medium",
-      status: "on-track"
-    },
-    {
-      title: "Participate in 5 Hackathons",
-      shortTitle: "5 Hackathons",
-      deadline: "Dec 31, 2025",
-      shortDeadline: "Dec 31",
-      progress: 2,
-      total: 5,
-      priority: "high",
       status: "behind"
     },
   ];
@@ -182,20 +184,20 @@ const PlannerSection = forwardRef((props, ref) => {
         return (
           <div className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              {/* Today's Schedule */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+              {/* Preparation Schedule */}
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#8B5CF6] flex-shrink-0" />
-                  <span className="truncate">Project Timeline</span>
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EA580C] flex-shrink-0" />
+                  <span className="truncate">Preparation Timeline</span>
                 </h3>
                 <div className="space-y-3 sm:space-y-4">
-                  {projectSchedule.map((item, idx) => (
+                  {prepSchedule.map((item, idx) => (
                     <div key={idx} className="flex items-start space-x-2 sm:space-x-3">
                       <div className="flex-shrink-0 mt-0.5">
                         {item.status === "completed" ? (
-                          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#8B5CF6]" />
+                          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#EA580C]" />
                         ) : item.status === "in-progress" ? (
-                          <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#A78BFA]" />
+                          <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#F97316]" />
                         ) : (
                           <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                         )}
@@ -216,9 +218,9 @@ const PlannerSection = forwardRef((props, ref) => {
                           </span>
                         </div>
                         <div className="flex items-center mt-2">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${item.priority === "high" ? "bg-[#8B5CF6]/10 text-[#8B5CF6]" :
-                              item.priority === "medium" ? "bg-[#A78BFA]/10 text-[#A78BFA]" :
-                                "bg-[#8B5CF6]/20 text-[#8B5CF6]"
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${item.priority === "high" ? "bg-[#EA580C]/10 text-[#EA580C]" :
+                              item.priority === "medium" ? "bg-[#F97316]/10 text-[#F97316]" :
+                                "bg-[#EA580C]/20 text-[#EA580C]"
                             }`}>
                             {item.priority}
                           </span>
@@ -229,11 +231,11 @@ const PlannerSection = forwardRef((props, ref) => {
                 </div>
               </div>
 
-              {/* Mini Calendar */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+              {/* Interview Calendar */}
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
-                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#8B5CF6] flex-shrink-0" />
-                  June 2025
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EA580C] flex-shrink-0" />
+                  January 2025
                 </h3>
 
                 {/* Calendar Grid */}
@@ -246,23 +248,23 @@ const PlannerSection = forwardRef((props, ref) => {
 
                   {Array.from({ length: 35 }, (_, i) => {
                     const day = i + 1;
-                    const isCurrentMonth = day > 0 && day <= 30;
-                    const isToday = day === 15;
-                    const hasHackathon = [7, 14, 21, 28].includes(day);
+                    const isCurrentMonth = day > 0 && day <= 31;
+                    const isToday = day === 17;
+                    const hasInterview = [12, 18, 25, 29].includes(day);
 
                     return (
                       <div
                         key={i}
                         className={`text-xs rounded-md sm:rounded-lg aspect-square flex items-center justify-center cursor-pointer transition-colors ${isCurrentMonth
                             ? isToday
-                              ? "bg-[#8B5CF6] text-white font-bold"
-                              : hasHackathon
-                                ? "bg-[#8B5CF6]/10 text-[#8B5CF6] font-medium"
+                              ? "bg-[#EA580C] text-white font-bold"
+                              : hasInterview
+                                ? "bg-[#EA580C]/10 text-[#EA580C] font-medium"
                                 : "hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
                             : "text-gray-300 dark:text-gray-600"
                           }`}
                       >
-                        {day > 0 && day <= 30 ? day : ""}
+                        {day > 0 && day <= 31 ? day : ""}
                       </div>
                     );
                   })}
@@ -277,9 +279,9 @@ const PlannerSection = forwardRef((props, ref) => {
           <div className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
               {/* Skills Progress */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
-                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#8B5CF6] flex-shrink-0" />
+                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EA580C] flex-shrink-0" />
                   Skills Progress
                 </h3>
                 <div className="space-y-3 sm:space-y-4">
@@ -296,7 +298,7 @@ const PlannerSection = forwardRef((props, ref) => {
                       </div>
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 sm:h-2">
                         <div
-                          className="bg-[#8B5CF6] h-1.5 sm:h-2 rounded-full transition-all duration-500"
+                          className="bg-[#EA580C] h-1.5 sm:h-2 rounded-full transition-all duration-500"
                           style={{ width: `${item.completed}%` }}
                         />
                       </div>
@@ -305,19 +307,19 @@ const PlannerSection = forwardRef((props, ref) => {
                 </div>
               </div>
 
-              {/* Weekly Development Hours */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+              {/* Weekly Study Hours */}
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
-                  <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#8B5CF6] flex-shrink-0" />
-                  <span className="hidden sm:inline">Weekly Development Hours</span>
-                  <span className="sm:hidden">Weekly Hours</span>
+                  <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EA580C] flex-shrink-0" />
+                  <span className="hidden sm:inline">Weekly Study Hours</span>
+                  <span className="sm:hidden">Study Hours</span>
                 </h3>
                 <div className="flex items-end justify-between h-20 sm:h-32">
                   {weeklyStats.map((stat, idx) => (
                     <div key={idx} className="flex flex-col items-center">
                       <div className="relative w-4 sm:w-6 h-12 sm:h-24 bg-gray-100 dark:bg-gray-700 rounded-full mb-1 sm:mb-2">
                         <div
-                          className="absolute bottom-0 left-0 right-0 bg-[#8B5CF6] rounded-full transition-all duration-500"
+                          className="absolute bottom-0 left-0 right-0 bg-[#EA580C] rounded-full transition-all duration-500"
                           style={{ height: `${Math.min((stat.hours / stat.target) * 100, 100)}%` }}
                         />
                       </div>
@@ -339,8 +341,8 @@ const PlannerSection = forwardRef((props, ref) => {
       case "goals":
         return (
           <div className="space-y-4 sm:space-y-6">
-            {hackathonGoals.map((goal, idx) => (
-              <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+            {careerGoals.map((goal, idx) => (
+              <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 sm:mb-4 gap-2 sm:gap-4">
                   <div className="min-w-0 flex-1">
                     <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1">
@@ -348,17 +350,17 @@ const PlannerSection = forwardRef((props, ref) => {
                       <span className="sm:hidden">{goal.shortTitle || goal.title}</span>
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                      Deadline: <span className="hidden sm:inline">{goal.deadline}</span>
+                      Target: <span className="hidden sm:inline">{goal.deadline}</span>
                       <span className="sm:hidden">{goal.shortDeadline}</span>
                     </p>
                   </div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${goal.priority === "high" ? "bg-[#8B5CF6]/10 text-[#8B5CF6]" :
-                        "bg-[#A78BFA]/10 text-[#A78BFA]"
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${goal.priority === "high" ? "bg-[#EA580C]/10 text-[#EA580C]" :
+                        "bg-[#F97316]/10 text-[#F97316]"
                       }`}>
                       {goal.priority}
                     </span>
-                    <span className={`px-2 py-1 rounded-full text-xs text-white font-medium ${goal.status === "on-track" ? "bg-[#8B5CF6]" : "bg-[#A78BFA]"
+                    <span className={`px-2 py-1 rounded-full text-xs text-white font-medium ${goal.status === "on-track" ? "bg-[#EA580C]" : "bg-[#F97316]"
                       }`}>
                       {goal.status}
                     </span>
@@ -374,7 +376,7 @@ const PlannerSection = forwardRef((props, ref) => {
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 sm:h-2">
                     <div
-                      className={`h-1.5 sm:h-2 rounded-full transition-all duration-500 ${goal.status === "on-track" ? "bg-[#8B5CF6]" : "bg-[#A78BFA]"
+                      className={`h-1.5 sm:h-2 rounded-full transition-all duration-500 ${goal.status === "on-track" ? "bg-[#EA580C]" : "bg-[#F97316]"
                         }`}
                       style={{ width: `${(goal.progress / (goal.total || 100)) * 100}%` }}
                     />
@@ -384,10 +386,10 @@ const PlannerSection = forwardRef((props, ref) => {
             ))}
 
             {/* Add New Goal Form */}
-            <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+            <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
-                <Target className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#8B5CF6] flex-shrink-0" />
-                <span className="hidden sm:inline">Set New Hackathon Goal</span>
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EA580C] flex-shrink-0" />
+                <span className="hidden sm:inline">Set New Career Goal</span>
                 <span className="sm:hidden">New Goal</span>
               </h3>
               <form className="space-y-3 sm:space-y-4">
@@ -397,25 +399,25 @@ const PlannerSection = forwardRef((props, ref) => {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-3 sm:px-4 py-2 rounded-md sm:rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent text-sm sm:text-base"
-                    placeholder="e.g., Build a Mobile App"
+                    className="w-full px-3 sm:px-4 py-2 rounded-md sm:rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#EA580C] focus:border-transparent text-sm sm:text-base"
+                    placeholder="e.g., Get SDE role at Google"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Deadline
+                      Target Date
                     </label>
                     <input
                       type="date"
-                      className="w-full px-3 sm:px-4 py-2 rounded-md sm:rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 rounded-md sm:rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#EA580C] focus:border-transparent text-sm sm:text-base"
                     />
                   </div>
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Priority
                     </label>
-                    <select className="w-full px-3 sm:px-4 py-2 rounded-md sm:rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent text-sm sm:text-base">
+                    <select className="w-full px-3 sm:px-4 py-2 rounded-md sm:rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#EA580C] focus:border-transparent text-sm sm:text-base">
                       <option value="high">High Priority</option>
                       <option value="medium">Medium Priority</option>
                       <option value="low">Low Priority</option>
@@ -424,7 +426,7 @@ const PlannerSection = forwardRef((props, ref) => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-3 sm:px-4 py-2 bg-[#8B5CF6] text-white rounded-md sm:rounded-lg hover:bg-[#A78BFA] transition-colors flex items-center justify-center text-sm sm:text-base font-medium"
+                  className="w-full px-3 sm:px-4 py-2 bg-[#EA580C] text-white rounded-md sm:rounded-lg hover:bg-[#F97316] transition-colors flex items-center justify-center text-sm sm:text-base font-medium"
                 >
                   <Target className="w-4 h-4 mr-2" />
                   Add Goal
@@ -441,35 +443,35 @@ const PlannerSection = forwardRef((props, ref) => {
               {/* Performance Analytics Cards */}
               {[
                 {
-                  title: "Average Dev Time",
-                  shortTitle: "Dev Time",
-                  value: "8.2 hrs/day",
-                  shortValue: "8.2h/day",
-                  icon: Clock,
-                  color: "text-blue-600",
-                  trend: "+12% this week",
-                  shortTrend: "+12%"
+                  title: "Problems Solved",
+                  shortTitle: "Problems",
+                  value: "187/300",
+                  shortValue: "187/300",
+                  icon: Code,
+                  color: "text-orange-600",
+                  trend: "62% completion",
+                  shortTrend: "62%"
                 },
                 {
-                  title: "Projects Completed",
-                  shortTitle: "Projects",
-                  value: "7/10",
+                  title: "Interview Success",
+                  shortTitle: "Interviews",
+                  value: "3/5",
                   icon: CheckCircle,
                   color: "text-green-600",
-                  trend: "70% completion rate",
-                  shortTrend: "70%"
+                  trend: "60% success rate",
+                  shortTrend: "60%"
                 },
                 {
-                  title: "Hackathon Wins",
-                  shortTitle: "Wins",
-                  value: "3",
-                  icon: Award,
-                  color: "text-purple-600",
-                  trend: "Last win: AI Challenge",
-                  shortTrend: "AI Challenge"
+                  title: "Job Applications",
+                  shortTitle: "Applications",
+                  value: "45",
+                  icon: Briefcase,
+                  color: "text-blue-600",
+                  trend: "12 responses",
+                  shortTrend: "12 responses"
                 },
               ].map((stat, idx) => (
-                <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all text-center">
+                <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all text-center">
                   <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center mx-auto mb-3 sm:mb-4 ${stat.color}`}>
                     <stat.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
@@ -481,7 +483,7 @@ const PlannerSection = forwardRef((props, ref) => {
                     <span className="hidden sm:inline">{stat.title}</span>
                     <span className="sm:hidden">{stat.shortTitle}</span>
                   </p>
-                  <p className="text-xs text-[#8B5CF6] dark:text-[#A78BFA]">
+                  <p className="text-xs text-[#EA580C] dark:text-[#F97316]">
                     <span className="hidden sm:inline">{stat.trend}</span>
                     <span className="sm:hidden">{stat.shortTrend}</span>
                   </p>
@@ -489,38 +491,32 @@ const PlannerSection = forwardRef((props, ref) => {
               ))}
             </div>
 
-            {/* Technology Usage Chart */}
+            {/* Platform Usage & Recent Applications */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
-                  <Code className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#8B5CF6] flex-shrink-0" />
-                  <span className="hidden sm:inline">Technology Usage</span>
-                  <span className="sm:hidden">Tech Usage</span>
+                  <Code className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EA580C] flex-shrink-0" />
+                  <span className="hidden sm:inline">Platform Usage</span>
+                  <span className="sm:hidden">Platforms</span>
                 </h3>
                 <div className="space-y-2 sm:space-y-3">
                   {[
-                    { tech: "React.js", usage: 85, icon: Code },
-                    { tech: "Node.js", usage: 70, icon: Database },
-                    { tech: "Python", usage: 60, icon: Brain },
-                    { tech: "React Native", shortTech: "RN", usage: 45, icon: Smartphone },
+                    { platform: "LeetCode", problems: 187, icon: Code },
+                    { platform: "GeeksforGeeks", problems: 124, icon: Brain },
+                    { platform: "HackerRank", problems: 89, icon: Target },
+                    { platform: "Codeforces", shortPlatform: "CF", problems: 45, icon: Award },
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center justify-between">
                       <div className="flex items-center min-w-0 flex-1 mr-2">
-                        <item.icon className="w-3 h-3 sm:w-4 sm:h-4 text-[#8B5CF6] mr-2 flex-shrink-0" />
+                        <item.icon className="w-3 h-3 sm:w-4 sm:h-4 text-[#EA580C] mr-2 flex-shrink-0" />
                         <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white truncate">
-                          <span className="hidden sm:inline">{item.tech}</span>
-                          <span className="sm:hidden">{item.shortTech || item.tech}</span>
+                          <span className="hidden sm:inline">{item.platform}</span>
+                          <span className="sm:hidden">{item.shortPlatform || item.platform}</span>
                         </span>
                       </div>
                       <div className="flex items-center flex-shrink-0">
-                        <div className="w-12 sm:w-20 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 sm:h-2 mr-2">
-                          <div
-                            className="bg-[#8B5CF6] h-1.5 sm:h-2 rounded-full transition-all duration-500"
-                            style={{ width: `${item.usage}%` }}
-                          />
-                        </div>
-                        <span className="text-xs text-gray-500 dark:text-gray-400 w-8 text-right">
-                          {item.usage}%
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mr-2">
+                          {item.problems} solved
                         </span>
                       </div>
                     </div>
@@ -528,31 +524,30 @@ const PlannerSection = forwardRef((props, ref) => {
                 </div>
               </div>
 
-              {/* Recent Achievements */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+              {/* Recent Applications */}
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-slate-700 hover:border-[#EA580C] transition-all">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#8B5CF6] flex-shrink-0" />
-                  <span className="hidden sm:inline">Recent Achievements</span>
-                  <span className="sm:hidden">Achievements</span>
+                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EA580C] flex-shrink-0" />
+                  <span className="hidden sm:inline">Recent Applications</span>
+                  <span className="sm:hidden">Applications</span>
                 </h3>
                 <div className="space-y-2 sm:space-y-3">
                   {[
-                    { achievement: "Won AI Innovation Challenge", shortAchievement: "AI Challenge Win", date: "June 10", shortDate: "Jun 10", badge: "🏆" },
-                    { achievement: "Completed React Certification", shortAchievement: "React Cert", date: "June 5", shortDate: "Jun 5", badge: "🎓" },
-                    { achievement: "Built First Mobile App", shortAchievement: "Mobile App", date: "May 28", shortDate: "May 28", badge: "📱" },
-                    { achievement: "5-Day Coding Streak", shortAchievement: "5-Day Streak", date: "May 20", shortDate: "May 20", badge: "🔥" },
+                    { company: "Google", shortCompany: "Google", status: "Interview", date: "Jan 15", badge: "🏢" },
+                    { company: "Microsoft", shortCompany: "Microsoft", status: "Applied", date: "Jan 12", badge: "💼" },
+                    { company: "Amazon", shortCompany: "Amazon", status: "Rejected", date: "Jan 10", badge: "📋" },
+                    { company: "Meta", shortCompany: "Meta", status: "Applied", date: "Jan 8", badge: "🚀" },
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center justify-between py-1 sm:py-2">
                       <div className="flex items-center min-w-0 flex-1">
                         <span className="text-base sm:text-lg mr-2 sm:mr-3 flex-shrink-0">{item.badge}</span>
                         <div className="min-w-0 flex-1">
                           <p className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white truncate">
-                            <span className="hidden sm:inline">{item.achievement}</span>
-                            <span className="sm:hidden">{item.shortAchievement}</span>
+                            <span className="hidden sm:inline">{item.company}</span>
+                            <span className="sm:hidden">{item.shortCompany}</span>
                           </p>
                           <p className="text-xs text-gray-500 dark:text-gray-400">
-                            <span className="hidden sm:inline">{item.date}</span>
-                            <span className="sm:hidden">{item.shortDate}</span>
+                            {item.date} • {item.status}
                           </p>
                         </div>
                       </div>
@@ -562,10 +557,10 @@ const PlannerSection = forwardRef((props, ref) => {
               </div>
             </div>
           </div>
-        ); default:
-        return null;
+        ); 
     }
   };
+
   return (
     <section
       ref={(node) => {
@@ -582,13 +577,14 @@ const PlannerSection = forwardRef((props, ref) => {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-[300px] sm:w-[500px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[400px] bg-gradient-to-b from-[#8B5CF6]/5 to-transparent rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
-        <div className="absolute bottom-0 right-0 w-[200px] sm:w-[300px] md:w-[400px] h-[250px] sm:h-[400px] md:h-[500px] bg-gradient-to-tr from-[#A78BFA]/5 to-transparent rounded-full filter blur-[30px] sm:blur-[50px] md:blur-[60px]"></div>
-      </div>{/* Dynamic cursor light effect - disabled on mobile for performance */}
+        <div className="absolute top-0 left-0 w-[300px] sm:w-[500px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[400px] bg-gradient-to-b from-[#EA580C]/5 to-transparent rounded-full filter blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
+        <div className="absolute bottom-0 right-0 w-[200px] sm:w-[300px] md:w-[400px] h-[250px] sm:h-[400px] md:h-[500px] bg-gradient-to-tr from-[#F97316]/5 to-transparent rounded-full filter blur-[30px] sm:blur-[50px] md:blur-[60px]"></div>
+      </div>
+      {/* Dynamic cursor light effect - disabled on mobile for performance */}
       <div
         className="absolute inset-0 -z-5 overflow-hidden hidden sm:block"
         style={{
-          background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(139,92,246,0.07), transparent 80%)`,
+          background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(234,88,12,0.07), transparent 80%)`,
         }}
       />
 
@@ -600,8 +596,8 @@ const PlannerSection = forwardRef((props, ref) => {
             animate={{ opacity: 1, y: 0 }}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4"
           >
-            <span className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent">
-              Project Planner
+            <span className="bg-gradient-to-r from-[#EA580C] to-[#F97316] bg-clip-text text-transparent">
+              Career Planner
             </span>
           </motion.h2>
           <motion.p
@@ -610,7 +606,7 @@ const PlannerSection = forwardRef((props, ref) => {
             transition={{ delay: 0.1 }}
             className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-0"
           >
-            Plan your hackathon participation with our smart project planner
+            Plan your placement preparation journey with our intelligent career tracking system
           </motion.p>
         </div>
 
@@ -623,8 +619,8 @@ const PlannerSection = forwardRef((props, ref) => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-3 sm:px-4 md:px-6 py-2 rounded-md text-xs sm:text-sm font-medium transition-all flex items-center whitespace-nowrap ${activeTab === tab.id
-                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white"
-                      : "text-gray-600 dark:text-gray-300 hover:text-[#8B5CF6] dark:hover:text-[#8B5CF6]"
+                      ? "bg-gradient-to-r from-[#EA580C] to-[#F97316] text-white"
+                      : "text-gray-600 dark:text-gray-300 hover:text-[#EA580C] dark:hover:text-[#EA580C]"
                     }`}
                 >
                   <tab.icon className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
@@ -648,6 +644,7 @@ const PlannerSection = forwardRef((props, ref) => {
           {renderTabContent()}
         </motion.div>
       </div>
-    </section>);
+    </section>
+  );
 });
 export default PlannerSection;

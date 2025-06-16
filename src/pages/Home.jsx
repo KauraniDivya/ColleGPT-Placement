@@ -5,6 +5,7 @@ import PlannerSection from "../components/home/PlannerSection";
 import CommunitySection from "../components/home/CommunitySection";
 import SuccessStoriesSection from "../components/home/SuccessStoriesSection";
 import BlogsSection from "../components/home/BlogsSection";
+import CodingChallengeSection from "../components/home/CodingSection";
 
 const Home = () => {
   // State management
@@ -15,10 +16,10 @@ const Home = () => {
 
   // Check localStorage on component mount
   useEffect(() => {
-    const hasSeenModal = localStorage.getItem('hasSeenGATEModal');
+    const hasSeenModal = localStorage.getItem('hasSeenPlacementModal');
     if (!hasSeenModal) {
       setShowInfoModal(true);
-      localStorage.setItem('hasSeenGATEModal', 'true');
+      localStorage.setItem('hasSeenPlacementModal', 'true');
     }
   }, []);
 
@@ -30,8 +31,8 @@ const Home = () => {
   // Refs for sections
   const heroRef = useRef(null);
   const materialsRef = useRef(null);
+  const codingChallengeRef = useRef(null);
   const plannerRef = useRef(null);
-  const examInfoRef = useRef(null);
   const communityRef = useRef(null);
   const successRef = useRef(null);
   const blogsRef = useRef(null);
@@ -64,8 +65,8 @@ const Home = () => {
       const sections = [
         { ref: heroRef, id: "hero" },
         { ref: materialsRef, id: "materials" },
+        { ref: codingChallengeRef, id: "coding-challenge" },
         { ref: plannerRef, id: "planner" },
-        { ref: examInfoRef, id: "examinfo" },
         { ref: communityRef, id: "community" },
         { ref: successRef, id: "success" },
         { ref: blogsRef, id: "blogs" },
@@ -97,7 +98,7 @@ const Home = () => {
           <div className="bg-white dark:bg-slate-800 rounded-lg max-w-2xl w-full p-6 shadow-xl">
             <div className="flex justify-between items-start mb-4">
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                Welcome to Hackathon Preparation Platform! 🎯
+                Welcome to Placement Preparation Platform! 🚀
               </h2>
               <button
                 onClick={handleModalClose}
@@ -115,18 +116,20 @@ const Home = () => {
                 It's an open-source project and we welcome contributions from the community!
               </p>
               
-              <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
-                <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Project Information:</h3>
-                <ul className="list-disc list-inside space-y-2 text-blue-700 dark:text-blue-300">
+              <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-lg">
+                <h3 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Project Information:</h3>
+                <ul className="list-disc list-inside space-y-2 text-orange-700 dark:text-orange-300">
                   <li>Open Source Project</li>
                   <li>Sample/Mock Data for Demonstration</li>
                   <li>Open for Community Contributions</li>
-                  <li>Built for GATE CS & DA Aspirants</li>
+                  <li>Built for Placement Preparation</li>
+                  <li>Real Interview Questions & Coding Challenges</li>
+                  <li>Industry-Standard Resources & Tools</li>
                 </ul>
               </div>
 
               <p className="text-sm italic">
-                Feel free to contribute to this project and help make it better for the GATE CS community!
+                Feel free to contribute to this project and help make it better for the placement preparation community!
               </p>
             </div>
 
@@ -137,11 +140,12 @@ const Home = () => {
               >
                 Got it!
               </button>
+              
               <a
-                href="https://github.com/KauraniDivya/ColleGPT-Hackathon"
+                href="https://github.com/KauraniDivya/ColleGPT-Placement"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition-colors"
               >
                 Contribute on GitHub
               </a>
@@ -151,12 +155,15 @@ const Home = () => {
       )}
 
       {/* Main Content Sections */}
-      <HeroSection ref={heroRef} materialsRef={materialsRef} />
-      <MaterialsSection ref={materialsRef} />
-      <PlannerSection ref={plannerRef} />
-      <CommunitySection ref={communityRef} />
-      <SuccessStoriesSection ref={successRef} />
-      <BlogsSection ref={blogsRef} />
+      <div>
+        <HeroSection ref={heroRef} materialsRef={materialsRef} />
+        <MaterialsSection ref={materialsRef} />
+                <PlannerSection ref={plannerRef} />
+<CodingChallengeSection ref={codingChallengeRef} />
+        <CommunitySection ref={communityRef} />
+        <SuccessStoriesSection ref={successRef} />
+        <BlogsSection ref={blogsRef} />
+      </div>
 
       {/* Animation styles */}
       <style jsx>{`

@@ -24,7 +24,7 @@ const NotFound = () => {
         <div className="absolute inset-0 opacity-5 dark:opacity-10">
           <div className="w-full h-full bg-[linear-gradient(transparent_9px,#22c55e_1px),linear-gradient(90deg,transparent_9px,#22c55e_1px)] bg-[length:100px_100px]"></div>
         </div>
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-indigo-500/10 to-transparent blur-[80px]"></div>
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-orange-500/10 to-transparent blur-[80px]"></div>
         <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-emerald-500/10 to-transparent blur-[100px]"></div>
       </div>
 
@@ -40,7 +40,7 @@ const NotFound = () => {
       <div className="container mx-auto px-4 pt-20 pb-8 relative z-20">
         <div className="text-center">
           <motion.h1 
-            className="text-9xl font-bold text-indigo-600 dark:text-indigo-400 mb-4"
+            className="text-9xl font-bold text-orange-600 dark:text-orange-400 mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -70,7 +70,7 @@ const NotFound = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-700 to-purple-800 hover:from-green-700 hover:to-emerald-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-700 to-orange-800 hover:from-orange-600 hover:to-orange-500 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Return Home
             </Link>
@@ -125,7 +125,7 @@ const NotFound = () => {
             />
 
             {/* Subtle glow effect */}
-            <div className="absolute inset-0 rounded-full bg-indigo-500/10 dark:bg-indigo-400/10 blur-2xl -z-10"></div>
+            <div className="absolute inset-0 rounded-full bg-orange-500/10 dark:bg-orange-400/10 blur-2xl -z-10"></div>
           </motion.div>
         </div>
       </div>
